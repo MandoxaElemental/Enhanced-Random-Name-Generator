@@ -113,6 +113,7 @@ input{
 
 .nameList{
     height: 300px;
+    padding: 0 150px;
     overflow: scroll;
 }
 
@@ -216,4 +217,8 @@ input{
     display: flex;
     justify-content: space-around;
     align-items: center;
+  }
+
+  .deleteGrid{
+    text-align: end;
   }

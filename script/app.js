@@ -49,6 +49,7 @@ function createElements() {
         newDiv.className = 'nameGrid fadeIn'
         let div1 = document.createElement('div')
         let div2 = document.createElement('div')
+        div2.className = 'deleteGrid'
         let p = document.createElement('p');
         p.className = "Name";
         p.textContent = names;

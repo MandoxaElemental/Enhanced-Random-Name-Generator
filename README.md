@@ -31,4 +31,4 @@
 [Enhanced Random Name Generator GitHub Repository Link](https://github.com/MandoxaElemental/Enhanced-Random-Name-Generator)
 
 ### Enhanced Random Name Generator _Azure Link:
-[Enhanced Random Name Generator Azure Link]()
+[Enhanced Random Name Generator Azure Link](https://greinareserng-f3effzdddfbvhcae.westus-01.azurewebsites.net/)

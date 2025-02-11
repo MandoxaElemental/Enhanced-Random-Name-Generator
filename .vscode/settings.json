@@ -1,0 +1,4 @@
+{
+    "appService.defaultWebAppToDeploy": "/subscriptions/02264c3b-24f1-4df1-9103-a62ed26bd5b7/resourceGroups/LevelTwoGroup/providers/Microsoft.Web/sites/GReinaresERNG",
+    "appService.deploySubpath": "."
+}

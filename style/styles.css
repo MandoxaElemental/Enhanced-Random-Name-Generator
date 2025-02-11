@@ -46,7 +46,7 @@ input{
 .myGrid{
     padding: 20px;
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(3, 1fr);
     border-bottom: rgb(220, 173, 54) solid thick;
 }
 

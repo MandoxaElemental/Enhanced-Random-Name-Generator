@@ -7,11 +7,14 @@ let NameBtn = document.getElementById('nameBtn')
 let NameList = document.getElementById('nameList')
 let TeamBtn = document.getElementById('teamBtn')
 let TeamList = document.getElementById('teamList')
+let RandomBtn = document.getElementById('randomBtn')
+let RandomName = document.getElementById('randomName')
 let GroupGenerator = document.getElementById('groupGenerator')
 let Back = document.getElementById('back')
 let Summon = document.getElementById('summonAudio')
 let Remove = document.getElementById('removeAudio')
 let Group = document.getElementById('groupAudio')
+let Random = document.getElementById('randomAudio')
 
 NameBtn.addEventListener('click', function() {
     let nameInput = UserInput.value;
@@ -88,7 +91,7 @@ let counter = 1
 for (let i=0; i<chunks.length; i++){
     console.log(chunks[i])
     let group = document.createElement('p');
-    group.innerHTML = `Group ${counter} - ${chunks[i].join(" - ")}`
+    group.innerHTML = `Group ${counter}: ${chunks[i].join(" - ")}`
     TeamList.appendChild(group)
     counter++
 }
@@ -102,3 +105,14 @@ TeamBtn.addEventListener('click', function() {
 Back.addEventListener('click', function() {
     GroupGenerator.className = 'hidden'
 });
+
+function getRandomName(){
+    let randomArr = getLocalStorage();
+    let randomIndex = Math.floor(Math.random() * randomArr.length);
+    document.getElementById('randomName').innerText = randomArr[randomIndex];
+}
+RandomBtn.addEventListener('click', function() {
+    getRandomName()
+    Random.play()
+});
+getRandomName()

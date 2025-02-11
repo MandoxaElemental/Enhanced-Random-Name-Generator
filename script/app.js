@@ -15,6 +15,16 @@ let Summon = document.getElementById('summonAudio')
 let Remove = document.getElementById('removeAudio')
 let Group = document.getElementById('groupAudio')
 let Random = document.getElementById('randomAudio')
+let SwitchInput = document.getElementById('switchInput')
+let MyBool = false
+
+SwitchInput.addEventListener('click', function() {
+    if(document.getElementById("switchInput").checked === true){
+        MyBool = true
+    } else {
+        MyBool = false
+    }
+});
 
 NameBtn.addEventListener('click', function() {
     let nameInput = UserInput.value;
@@ -37,6 +47,8 @@ function createElements() {
     listNames.map(names => {
         let newDiv = document.createElement('div')
         newDiv.className = 'nameGrid fadeIn'
+        let div1 = document.createElement('div')
+        let div2 = document.createElement('div')
         let p = document.createElement('p');
         p.className = "Name";
         p.textContent = names;
@@ -52,8 +64,10 @@ function createElements() {
             Remove.play();
         });
 
-        newDiv.appendChild(p)
-        newDiv.appendChild(deletebtn)
+        div1.appendChild(p)
+        div2.appendChild(deletebtn)
+        newDiv.appendChild(div1)
+        newDiv.appendChild(div2)
         NameList.appendChild(newDiv);
     });
 };
@@ -61,6 +75,7 @@ function createElements() {
 createElements();
 
 function shuffleElements(){
+    let groupNum = 0;
     TeamList.innerHTML=''
     let newArr = getLocalStorage();
     for (let i = newArr.length - 1; i > 0; i--) { 
@@ -69,27 +84,27 @@ function shuffleElements(){
         newArr[i] = newArr[j];
         newArr[j] = temp;
     }
-    console.log(newArr)
-    let division = (newArr.length/slider.value)
-    let groupNum = Math.ceil(division)
-    console.log(groupNum)
+
+    if(MyBool === true){
+        let division = (newArr.length/slider.value)
+        groupNum = Math.ceil(division)
+    } else {
+        groupNum = Math.ceil(slider.value)
+    }
 
     let chunkSize = groupNum;
+    let chunks = [];
 
-let chunks = [];
-
-for (let i = 0; i < newArr.length; i += chunkSize) {
+    for (let k = 0; k < newArr.length; k += chunkSize) {
     let chunk = [];
-    for (let j = i; j < i + chunkSize && j < newArr.length; j++) {
-        chunk.push(newArr[j]);
+    for (let l = k; l < k + chunkSize && l < newArr.length; l++) {
+        chunk.push(newArr[l]);
     }
-    chunks.push(chunk);
-}
-console.log(chunks)
+        chunks.push(chunk);
+    }
 
 let counter = 1
 for (let i=0; i<chunks.length; i++){
-    console.log(chunks[i])
     let group = document.createElement('p');
     group.innerHTML = `Group ${counter}: ${chunks[i].join(" - ")}`
     TeamList.appendChild(group)
@@ -109,7 +124,7 @@ Back.addEventListener('click', function() {
 function getRandomName(){
     let randomArr = getLocalStorage();
     let randomIndex = Math.floor(Math.random() * randomArr.length);
-    document.getElementById('randomName').innerText = randomArr[randomIndex];
+    RandomName.innerText = randomArr[randomIndex];
 }
 RandomBtn.addEventListener('click', function() {
     getRandomName()

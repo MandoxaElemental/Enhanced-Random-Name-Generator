@@ -44,6 +44,10 @@ input{
     border-radius: 10px;
 }
 
+#nameInput{
+    margin-bottom: 45px;
+}
+
 .myGrid{
     padding: 20px;
     display: grid;
@@ -113,7 +117,7 @@ input{
 }
 
 .name{
-    font-size: 25px;
+    font-size: 30px;
 }
 
 .delete{
@@ -130,8 +134,8 @@ input{
     opacity: 80%;
 }
 .nameGrid{
-    display: flex;
-    justify-content: space-around;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
     align-items: center;
     border-bottom: rgba(0, 0, 0, 0.469) thin solid;
 }
@@ -156,3 +160,60 @@ input{
 .hidden{
     display: none;
 }
+
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 34px;
+  }
+  
+  .switch .SwitchInput {
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+  
+  .sliderToggle {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color:Black;
+    -webkit-transition: .4s;
+    transition: .4s;
+  }
+  
+  .sliderToggle:before {
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    background-color:#151da6;
+    -webkit-transition: .4s;
+    transition: .4s;
+  }
+  
+  .SwitchInput:checked + .sliderToggle:before {
+    -webkit-transform: translateX(26px);
+    -ms-transform: translateX(26px);
+    transform: translateX(26px);
+  }
+  
+  .sliderToggle.round {
+    border-radius: 34px;
+  }
+  
+  .sliderToggle.round:before {
+    border-radius: 50%;
+  }
+
+  .flex-switch{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+  }

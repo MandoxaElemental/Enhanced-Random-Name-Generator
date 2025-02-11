@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RNG</title>
+    <link rel="stylesheet" href="/style/styles.css">
+    <link rel="stylesheet" href="/style/wickedcss.min.css">
+    <link rel="icon" type="image/png" sizes="32x32" href="/public/assets/VelvetRoom.png">
+
+</head>
+<body>
+    <div class="mainBox">
+        <div class="topBar">
+            <h1>RNG</h1>
+        </div>
+        <div class="myGrid">
+            <div class="justify">
+                <div>
+                    <div>
+                        <input id="nameInput" type="text" placeholder="Name Here">
+                    </div>
+                    <button id="nameBtn" class="myBtn">Add Person</button>
+                </div>
+            </div>
+            <div class="justify">
+                <div>
+                    <div class="slidecontainer">
+                        <div id="demo"></div>
+                        <input type="range" min="1" max="50" value="1" class="slider" id="myRange">
+                    </div>
+                    <button id="teamBtn" class="myBtn">Generate Groups</button>
+                </div>
+            </div>
+        </div>
+        <div class="nameList" id="nameList">
+        </div>
+        <div id="groupGenerator" class="groupGenerator hidden">
+            <div class="topBar"><h1>Teams</h1></div>
+            <div id="teamList"></div>
+            <button id="back" class="delete">Back</button>
+        </div>
+    </div>
+    <script type="module" src="/script/app.js"></script>
+</body>
+</html>

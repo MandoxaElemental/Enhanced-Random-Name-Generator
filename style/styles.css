@@ -1,0 +1,155 @@
+@font-face{
+    font-family: Fontsona3;
+    src: url('/public/assets/fonts/Fontsona3FES.ttf');
+}
+
+body{
+    background-image: url('/public/assets/Background.png');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: 100% 100%;
+    font-family: Fontsona3;
+}
+
+.topBar{
+    background-color: #151da6;
+    height: 60px;
+    border-radius: 15px 15px 0 0 ;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-bottom: rgb(220, 173, 54) solid thick;
+}
+
+.mainBox{
+    background-color: rgba(255, 255, 255, 0.647);
+    border: rgb(220, 173, 54) solid thick;
+    border-radius: 20px;
+    margin: 50px;
+    text-align: center;
+}
+
+h1{
+    color: rgb(220, 173, 54)
+}
+
+input{
+    width: 200px;
+    color: white;
+    text-align: center;
+    background-color: black;
+    border: rgb(220, 173, 54) solid thick;
+    border-style: ridge;
+    font-family: Fontsona3;
+}
+
+.myGrid{
+    padding: 20px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    border-bottom: rgb(220, 173, 54) solid thick;
+}
+
+.myBtn{
+    margin: 10px;
+    color: rgb(220, 173, 54); 
+    background-color: #151da6;
+    border: rgb(220, 173, 54) solid thick;
+    border-style: ridge;
+    font-family: Fontsona3;
+    width: 200px;
+}
+
+.myBtn:hover{
+    opacity: 80%;
+}
+
+.slider {
+  -webkit-appearance: none;
+  height: 10px;
+  border-radius: 5px;
+  background: #d3d3d3;
+  outline: none;
+  opacity: 0.7;
+  -webkit-transition: .2s;
+  transition: opacity .2s;
+}
+
+.slider:hover {
+  opacity: 1;
+}
+
+.slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 23px;
+  height: 24px;
+  border: 0;
+  border-radius: 100px;
+  background-color: #151da6;
+  cursor: pointer;
+}
+
+.slider::-moz-range-thumb {
+    width: 23px;
+    height: 24px;
+    border: 0;
+    border-radius: 100px;
+    background-color: #151da6;
+    cursor: pointer;
+}
+
+.justify{
+    display: flex;
+    justify-content: center;
+    align-items: end;
+}
+
+.nameList{
+    height: 300px;
+    overflow: scroll;
+}
+
+.name{
+    font-size: 25px;
+}
+
+.delete{
+    color: rgb(220, 173, 54); 
+    background-color: black;
+    border: rgb(220, 173, 54) solid thick;
+    border-style: ridge;
+    font-family: Fontsona3;
+    width: 100px;
+    height: 40px;
+}
+.delete:hover{
+    opacity: 80%;
+}
+.nameGrid{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    border-bottom: rgba(0, 0, 0, 0.469) thin solid;
+}
+
+.groupGenerator{
+    background-color: rgba(255, 255, 255, 0.833);
+    border: rgb(220, 173, 54) solid thick;
+    border-radius: 20px;
+    position: absolute;
+    width: 400px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+#teamList{
+    margin: 10px;
+    padding: 10px;
+}
+
+.hidden{
+    display: none;
+}

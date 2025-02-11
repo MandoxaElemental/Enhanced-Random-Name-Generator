@@ -9,12 +9,16 @@ let TeamBtn = document.getElementById('teamBtn')
 let TeamList = document.getElementById('teamList')
 let GroupGenerator = document.getElementById('groupGenerator')
 let Back = document.getElementById('back')
+let Summon = document.getElementById('summonAudio')
+let Remove = document.getElementById('removeAudio')
+let Group = document.getElementById('groupAudio')
 
 NameBtn.addEventListener('click', function() {
     let nameInput = UserInput.value;
     UserInput.value = '';
     saveToLocalStorageByName(nameInput); 
     createElements();
+    Summon.play();
 });
 
 output.innerHTML = slider.value;
@@ -42,6 +46,7 @@ function createElements() {
         deletebtn.addEventListener('click', function () {
             removeFromLocalStorage(names);
             newDiv.remove();
+            Remove.play();
         });
 
         newDiv.appendChild(p)
@@ -56,9 +61,7 @@ function shuffleElements(){
     TeamList.innerHTML=''
     let newArr = getLocalStorage();
     for (let i = newArr.length - 1; i > 0; i--) { 
-        
         const j = Math.floor(Math.random() * (i + 1));
-        
         const temp = newArr[i];
         newArr[i] = newArr[j];
         newArr[j] = temp;
@@ -94,6 +97,7 @@ for (let i=0; i<chunks.length; i++){
 TeamBtn.addEventListener('click', function() {
     GroupGenerator.className = 'groupGenerator fadeIn'
     shuffleElements()
+    Group.play();
 });
 Back.addEventListener('click', function() {
     GroupGenerator.className = 'hidden'

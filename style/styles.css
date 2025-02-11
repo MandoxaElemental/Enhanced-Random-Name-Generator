@@ -145,7 +145,7 @@ input{
     text-align: center;
 }
 
-#teamList{
+.groupInnerBox{
     margin: 10px;
     padding: 10px;
 }
